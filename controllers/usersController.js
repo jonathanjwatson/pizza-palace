@@ -6,9 +6,17 @@ const router = express.Router();
 // GET ALL USERS
 router.get("/", (req, res) => {
   db.User.findAll({}).then((users) => {
+      // THIS IS BAD!
+    const usersToReturn = users.map((user) => {
+      return {
+        id: user.id,
+        username: user.username,
+        phoneNumber: user.phoneNumber,
+      };
+    });
     res.json({
       error: false,
-      data: users,
+      data: usersToReturn,
       message: "All available users.",
     });
   });
@@ -36,17 +44,16 @@ router.get("/:id", (req, res) => {
 
 // CREATE NEW USER
 router.post("/", (req, res) => {
-
-//   for (const property in req.body) {
-//     console.log(`${property}: ${req.body[property]}`);
-//     if (req.body[property].length < 1) {
-//       return res.status(400).json({
-//         error: true,
-//         data: null,
-//         message: "Invalid user provided.",
-//       });
-//     }
-//   }
+  //   for (const property in req.body) {
+  //     console.log(`${property}: ${req.body[property]}`);
+  //     if (req.body[property].length < 1) {
+  //       return res.status(400).json({
+  //         error: true,
+  //         data: null,
+  //         message: "Invalid user provided.",
+  //       });
+  //     }
+  //   }
 
   if (
     !req.body.username ||
