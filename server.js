@@ -17,7 +17,7 @@ app.get("/api/config", (req, res) => {
 
 // SEPARATION OF CONCERNS
 // MVC Pattern
-app.use(UsersController);
+app.use("/api/users", UsersController);
 
 // db.sequelize.sync({force:true}).then(() => {
 db.sequelize.sync().then(() => {

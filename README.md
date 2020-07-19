@@ -63,6 +63,21 @@ const router = express.Router();
 module.exports = router;
 ```
 
+5. Build out 5 RESTful Routes
+* GET all users
+* GET single user by Id
+* POST create a new user
+* PUT update a user
+* DELETE delete a user
+
+## Incorporate Sequelize into Routes
+1. Require models folder.
+2. Call sequelize method `findAll` in my /api/users route. 
+3. Call sequelize method `create` in my /api/users POST route.
+
 ## Miscellaneous
 
 - Add a `watch` or `dev` script to package.json that includes `nodemon server.js`
+- Sequel injection attacks. 
+- Sanitize response bodies.
+- Sequelize validations to handle password length and complexity.
