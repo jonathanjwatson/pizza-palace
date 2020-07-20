@@ -21,6 +21,7 @@
   "homepage": "https://github.com/jonathanjwatson/pizza-palace#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.1.0",
     "sequelize": "^6.3.3"
   }

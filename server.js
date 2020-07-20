@@ -1,6 +1,7 @@
 const express = require("express");
 const db = require("./models");
 const UsersController = require("./controllers/usersController");
+const AuthController = require("./controllers/authController");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.get("/api/config", (req, res) => {
 // SEPARATION OF CONCERNS
 // MVC Pattern
 app.use("/api/users", UsersController);
+app.use("/api/auth", AuthController);
 
 // db.sequelize.sync({force:true}).then(() => {
 db.sequelize.sync().then(() => {
