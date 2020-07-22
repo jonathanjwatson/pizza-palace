@@ -87,3 +87,6 @@ module.exports = router;
 1. Run `create-react-app client`
 2. Make sure that our server is running on a different port than React. (CRA runs on 3000 by default).
 3. Add a route for serving React in production to the `server.js` file. 
+4. Add express.static for serving up the generated build folder and files. 
+5. Add boilerplate scripts for building and running both apps. 
+6. 
