@@ -81,3 +81,9 @@ module.exports = router;
 - Sequel injection attacks. 
 - Sanitize response bodies.
 - Sequelize validations to handle password length and complexity.
+
+
+## Add React
+1. Run `create-react-app client`
+2. Make sure that our server is running on a different port than React. (CRA runs on 3000 by default).
+3. Add a route for serving React in production to the `server.js` file. 
